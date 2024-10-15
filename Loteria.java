@@ -1,6 +1,5 @@
 import java.util.Scanner;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
@@ -13,7 +12,7 @@ public class Main {
 
 		//Apuesta del usuario:
 
-		Set<Integer> apuesta = new HashSet<Integer>();
+		ArrayList<Integer> apuesta = new ArrayList<Integer>();
 		
 		for (int i = 0; i < 6; i++) {
 			String[] orden = {"Primer", "Segundo", "Tercer", "Cuarto", "Quinto", "Sexto"};
@@ -23,11 +22,9 @@ public class Main {
 			if (num > 49 || num < 1) {
 				System.out.printf("%nNúmero incorrecto; solamente del 1 al 49. ");
 				i = i - 1;
-				continue;
 			} else if (apuesta.contains(num)) {
 				System.out.printf("%nNúmero ya introducido. ");
 				i = i - 1;
-				continue;
 			} else {
 				apuesta.add(num);
 			}
@@ -37,14 +34,13 @@ public class Main {
 
 		//Números ganadores:
 		
-		Set<Integer> ganadores = new HashSet<Integer>();
+		ArrayList<Integer> ganadores = new ArrayList<Integer>();
 
 		for (int i = 1; i < 7; i++) {
 			int num = rand.nextInt(49) + 1;
 
 			if (ganadores.contains(num)) {
 				i = i - 1;
-				continue;
 			} else {
 				ganadores.add(num);
 			}
