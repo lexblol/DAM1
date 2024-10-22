@@ -8,8 +8,8 @@ public class Main {
 		System.out.print("Número de filas: ");
 		int nfilas = scan.nextInt();
 
-		for (int i = 1; i <= nfilas; i++) {
-			for (int a = 1; a <= i; a++) {
+		for (int i = 0; i < nfilas; i++) {
+			for (int j = 0; j < i + 1 ; j++) {
 				System.out.print("*");
 			}
 
